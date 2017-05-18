@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Worker Test</title>
+
+  <style>
+    body {
+      max-width: 500px;
+      margin: 8px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Off-thread counter</h1>
+
+  <center>
+    <button type=button id=dec disabled>-</button>
+    <input type="number" id=num disabled />
+    <button type=button id=inc disabled>+</button>
+  </center>
+
+  <p>
+    This is Redux but with one important change: all of the "business logic"
+    is implemented on a separate worker thread. It might be stupid to do that
+    for a single counter, but when you need to retrieve a bunch of data and
+    process it before displaying, the hassle might just be worth it to keep
+    the UI responsive even during long operations.
+  </p>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js" charset="utf-8"></script>
+  <script src="script.js" charset="utf-8"></script>
+</body>
+</html>
